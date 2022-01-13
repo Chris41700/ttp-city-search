@@ -7,7 +7,7 @@ const CitySearch = () => {
 
     const getCity = async () => {
         try {
-            const response = await fetch(`http://ctp-zip-api.herokuapp.com/city/${filteredData}`)
+            const response = await fetch(`http://ctp-zip-api.herokuapp.com/city/${filteredData.toUpperCase()}`)
             //const response = await fetch(`http://ctp-zip-api.herokuapp.com/city/SPRINGFIELD`)
             console.log(response)
 
@@ -37,7 +37,7 @@ const CitySearch = () => {
                 <input 
                     type = "text" 
                     className = "form-control"
-                    placeholder = "MANHATTAN"
+                    placeholder = "try SPRINGFIELD"
                     value = {filteredData}
                     onChange = {event => setFilteredData(event.target.value)}>
                 </input>
